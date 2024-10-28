@@ -1,0 +1,217 @@
+<script>
+	
+/*
+	 
+	
+𝗦𝗘𝗖𝗖𝗜𝗢𝗡𝗘𝗦 𝗖𝗢𝗟𝗟𝗔𝗣𝗦𝗔𝗕𝗟𝗘𝗦 𝗣𝗘𝗥𝗦𝗢𝗡𝗔𝗟𝗜𝗭𝗔𝗗𝗔𝗦 𝗣𝗔𝗥𝗔 𝗘𝗟𝗘𝗠𝗘𝗡𝗧𝗢𝗦 𝗪𝗢𝗥𝗗𝗣𝗥𝗘𝗦𝗦
+  
+Con este código, puedes agregar fácilmente elementos colapsables en WordPress.
+
+
+
+
+𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗨𝗡 𝗖𝗢𝗟𝗔𝗣𝗦𝗔𝗕𝗟𝗘:
+
+
+	1. 𝗘𝗟𝗘𝗠𝗘𝗡𝗧𝗢 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗢𝗥: 
+	Elige el elemento de WordPress que activará la apertura o cierre de la sección colapsable: 
+
+		1.1. Selecciónalo (desde el editor de WordPress) y abre la pestaña de 𝗔𝘃𝗮𝗻𝘇𝗮𝗱𝗼.
+		1.2. Ve a la sección de 𝗔𝘁𝗿𝗶𝗯𝘂𝘁𝗼𝘀.
+		1.3. Elige un "nombre" para la sección colapsable, como por ejemplo "saber_mas", y escribe el atributo "open-collapse-section" con el "nombre" de la sección colapsable como valor, por ejemplo:
+		𝗼𝗽𝗲𝗻-𝗰𝗼𝗹𝗹𝗮𝗽𝘀𝗲-𝘀𝗲𝗰𝘁𝗶𝗼𝗻|𝘀𝗮𝗯𝗲𝗿_𝗺𝗮𝘀
+
+
+	𝗘𝗟𝗘𝗠𝗘𝗡𝗧𝗢 𝗖𝗢𝗟𝗔𝗣𝗦𝗔𝗗𝗢: 
+	Elige el elemento de WordPress que se colapsará (abrir/cerrar):
+
+		2.1. Selecciónalo (desde el editor de WordPress) y abre la pestaña de 𝗔𝘃𝗮𝗻𝘇𝗮𝗱𝗼.
+		2.2. Ve a la sección de 𝗔𝘁𝗿𝗶𝗯𝘂𝘁𝗼𝘀.
+		2.3. Agrega el atributo "collapse-section-name" con el valor de la sección colapsable (el que elegiste cuando agregaste el atributo en el elemento "activador"), por ejemplo:
+		𝗰𝗼𝗹𝗹𝗮𝗽𝘀𝗲-𝘀𝗲𝗰𝘁𝗶𝗼𝗻-𝗻𝗮𝗺𝗲|𝘀𝗮𝗯𝗲𝗿_𝗺𝗮𝘀
+
+
+
+
+
+
+𝗢𝗣𝗖𝗜𝗢𝗡𝗘𝗦 𝗔𝗩𝗔𝗡𝗭𝗔𝗗𝗔𝗦 (𝗢𝗽𝗰𝗶𝗼𝗻𝗮𝗹𝗲𝘀):
+
+
+	𝗠𝗼𝗱𝗶𝗳𝗶𝗰𝗮𝗿 𝗲𝗹 𝘁𝗶𝗲𝗺𝗽𝗼 𝗱𝗲 𝘁𝗿𝗮𝗻𝘀𝗶𝗰𝗶𝗼𝗻:
+	Para cambiar el tiempo de transición, agrega el atributo collapse-section-transition al elemento colapsado. El valor del atributo debe ser el tiempo que deseas para la duración de la transición, en milisegundos. Por ejemplo, "1000" para 1000 milisegundos (equivalente a un segundo).
+
+
+	𝗔𝗯𝗿𝗶𝗿/𝗰𝗲𝗿𝗿𝗮𝗿/𝘁𝗼𝗴𝗴𝗹𝗲 𝘂𝗻 𝗲𝗹𝗲𝗺𝗲𝗻𝘁𝗼 𝗰𝗼𝗹𝗹𝗮𝗽𝘀𝗮𝗯𝗹𝗲 𝗰𝗼𝗻 𝗝𝗦:
+	En el objeto de la ventana (window) se ha agregado customCollapseSections. Puedes acceder a sus propiedades open, close y toggle para gestionar los colapsables con JavaScript.
+
+
+	𝗔𝗰𝗰𝗲𝗱𝗲𝗿 𝗮𝗹 𝗼𝗯𝗷𝗲𝘁𝗼 𝗱𝗲 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝗰𝗶𝗼𝗻:
+	Desde window.customCollapseSections.config, puedes acceder al objeto de configuración con todas sus propiedades.
+
+
+	𝗗𝗲𝘁𝗲𝗰𝘁𝗮𝗿 𝗰𝘂𝗮𝗻𝗱𝗼 𝘀𝗲 𝗮𝗯𝗿𝗲/𝗰𝗶𝗲𝗿𝗿𝗮 𝘂𝗻 𝗰𝗼𝗹𝗹𝗮𝗽𝘀𝗮𝗯𝗹𝗲:
+	Desde window.customCollapseSections.addCollapseListener, puedes agregar un oyente que se ejecutará cuando el colapsable elegido se abra o cierre.
+
+
+	𝗘𝘀𝘁𝗶𝗹𝗼𝘀 𝗽𝗲𝗿𝘀𝗼𝗻𝗮𝗹𝗶𝘇𝗮𝗱𝗼𝘀 𝗽𝗮𝗿𝗮 𝗰𝘂𝗮𝗻𝗱𝗼 𝗲𝘀𝘁𝗮 𝗮𝗯𝗶𝗲𝗿𝘁𝗼/𝗰𝗲𝗿𝗿𝗮𝗱𝗼 𝗲𝗹 𝗰𝗼𝗹𝗹𝗮𝗽𝘀𝗮𝗯𝗹𝗲:
+	A cada elemento activador y al elemento colapsable se le agrega el atributo "collapse-open", que determina si el colapsable está abierto o no, con valores "true" o "false". 
+	Esto es útil, por ejemplo, para aplicar estilos al elemento según su estado. Para ello:
+
+	1. Selecciona el elemento al que quieres aplicarle los estilos.
+	2. Ve a la pestaña de "avanzado", y a abre la seccion "CSS personalizado". 
+	3. Agrega el estilo CSS segun el atributo.
+		Si quieres que solo aplique cuando esta abierto debe ser "[collapse-open=true]" y si quieres que solo aplique cuando esta cerrado "[collapse-open=false]"), por ejemplo:
+
+	 selector[collapse-open=true] .arrow {
+			transform: rotate(90deg);
+	 }
+
+	 
+	 
+	 
+	 
+*/
+	
+	
+	
+    document.addEventListener('DOMContentLoaded', function() {
+        var CONFIG_COLLAPSE_SECTIONS = {
+            transitionTime: 1000,
+            atributtesName: {
+                collapseSectionName: 'collapse-section-name',
+                openCollapseSection: 'open-collapse-section',
+                collapseSectionTransition: 'collapse-section-transition',
+                collapseOpen: 'collapse-open'
+            }
+        };
+        
+        var collapse_sections = document.querySelectorAll(`[${CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseSectionName}]`) || [];
+        
+        collapse_sections.forEach(section => {
+            try {
+                var innerContent = document.createElement('div');
+                innerContent.classList.add("collapse_section_container");
+                innerContent.style.overflow = 'hidden';
+
+                while (section.firstChild) {
+                    innerContent.appendChild(section.firstChild);
+                }
+                section.appendChild(innerContent);
+
+                section.style.maxHeight = '0';
+                section.style.overflow = 'hidden';
+
+                var triggerName = section.getAttribute(CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseSectionName);
+                var trigger = document.querySelector(`[${CONFIG_COLLAPSE_SECTIONS.atributtesName.openCollapseSection}="${triggerName}"]`);
+                
+                if (trigger) {
+                    trigger.onclick = (e) => {
+                        e.preventDefault();
+                        toggleCollapse(triggerName);
+                    };
+
+                    var internalLinks = trigger.querySelectorAll('a');
+                    internalLinks.forEach(link => {
+                        link.onclick = (e) => {
+                            e.preventDefault();
+                        };
+                    });
+                }
+            } catch (error) {
+                console.error("Error al procesar las secciones de colapso:", error);
+            }
+        });
+
+        function toggleCollapse(triggerName, action) {
+            try {
+                var section = document.querySelector(`[${CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseSectionName}="${triggerName}"]`);
+                var trigger = document.querySelector(`[${CONFIG_COLLAPSE_SECTIONS.atributtesName.openCollapseSection}="${triggerName}"]`);
+                
+                if (!section || !trigger) return;
+
+                var innerContent = section.querySelector('div.collapse_section_container');
+                if (!innerContent) return;
+
+                var isOpen = section.getAttribute(CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseOpen) === 'true';
+                var transitionTime = Number(section.getAttribute(CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseSectionTransition)) || CONFIG_COLLAPSE_SECTIONS.transitionTime;
+
+                section.style.transition = `max-height ${transitionTime}ms ease`;
+                section.style.overflow = 'hidden';
+
+                var computedStyle = getComputedStyle(section);
+                var padding = parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+                var margin = parseFloat(computedStyle.marginTop) + parseFloat(computedStyle.marginBottom);
+                
+                const toggleAttrCollapseOpen = (value) => {
+                    section.setAttribute(CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseOpen, value);
+                    trigger.setAttribute(CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseOpen, value);
+                };
+                
+                const setSectionMaxHeight = () => {
+                    section.style.maxHeight = `${innerContent.scrollHeight + padding + margin}px`;
+                };
+
+                const dispatchCollapseEvent = (isOpened) => {
+                    const event = new CustomEvent('collapseToggle', {
+                        detail: {
+                            triggerName: triggerName,
+                            isOpen: isOpened
+                        }
+                    });
+                    section.dispatchEvent(event);
+                };
+
+                if (action === 'close' || (action === undefined && isOpen)) {
+                    setSectionMaxHeight();
+                    requestAnimationFrame(() => {
+                        section.style.maxHeight = '0';
+                    });
+                    toggleAttrCollapseOpen('false');
+                    dispatchCollapseEvent(false);
+                } else if (action === 'open' || (action === undefined && !isOpen)) {
+                    setSectionMaxHeight();
+                    toggleAttrCollapseOpen('true');
+                    
+                    setTimeout(() => {
+                        section.style.maxHeight = '';
+                    }, transitionTime);
+                    dispatchCollapseEvent(true);
+                }
+            } catch (error) {
+                console.error(`Error al alternar el colapso de la sección '${triggerName}':`, error);
+            }
+        }
+
+        window.customCollapseSections = {
+            config: CONFIG_COLLAPSE_SECTIONS,
+            open: (triggerName) => {
+                try {
+                    toggleCollapse(triggerName, 'open');
+                } catch (error) {
+                    console.error(`Error al abrir la sección '${triggerName}':`, error);
+                }
+            },
+            close: (triggerName) => {
+                try {
+                    toggleCollapse(triggerName, 'close');
+                } catch (error) {
+                    console.error(`Error al cerrar la sección '${triggerName}':`, error);
+                }
+            },
+            toggle: (triggerName) => {
+                try {
+                    toggleCollapse(triggerName);
+                } catch (error) {
+                    console.error(`Error al alternar la sección '${triggerName}':`, error);
+                }
+            },
+            addCollapseListener: (triggerName, callback) => {
+                const section = document.querySelector(`[${CONFIG_COLLAPSE_SECTIONS.atributtesName.collapseSectionName}="${triggerName}"]`);
+                if (section) {
+                    section.addEventListener('collapseToggle', callback);
+                }
+            }
+        };
+    });
+</script>
